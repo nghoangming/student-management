@@ -1,6 +1,6 @@
-package com.studentmanagement.controller;
+package com.example.studentmanagement.controller;
 
-import com.studentmanagement.service.TaiKhoanService;
+import com.example.studentmanagement.service.TaiKhoanService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

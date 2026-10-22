@@ -1,4 +1,4 @@
-package com.studentmanagement.domain;
+package com.example.studentmanagement.domain;
 
 import jakarta.persistence.*;
 import java.util.List;

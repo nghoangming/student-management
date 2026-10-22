@@ -1,7 +1,7 @@
-package com.studentmanagement.service;
+package com.example.studentmanagement.service;
 
-import com.studentmanagement.domain.TaiKhoan;
-import com.studentmanagement.repository.TaiKhoanRepository;
+import com.example.studentmanagement.domain.TaiKhoan;
+import com.example.studentmanagement.repository.TaiKhoanRepository;
 import java.util.List;
 import java.util.Locale;
 import org.springframework.security.crypto.password.PasswordEncoder;

@@ -1,4 +1,4 @@
-package com.studentmanagement.service;
+package com.example.studentmanagement.service;
 
 import org.springframework.stereotype.Service;
 

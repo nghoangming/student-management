@@ -1,7 +1,7 @@
-package com.studentmanagement.service;
+package com.example.studentmanagement.service;
 
-import com.studentmanagement.domain.BangDiem;
-import com.studentmanagement.domain.ChiTietDiem;
+import com.example.studentmanagement.domain.BangDiem;
+import com.example.studentmanagement.domain.ChiTietDiem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

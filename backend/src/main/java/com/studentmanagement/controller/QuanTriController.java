@@ -1,10 +1,10 @@
-package com.studentmanagement.controller;
+package com.example.studentmanagement.controller;
 
-import com.studentmanagement.domain.TaiKhoan;
-import com.studentmanagement.domain.ThamSoHeThong;
-import com.studentmanagement.repository.TaiKhoanRepository;
-import com.studentmanagement.service.TaiKhoanService;
-import com.studentmanagement.service.ThamSoHeThongService;
+import com.example.studentmanagement.domain.TaiKhoan;
+import com.example.studentmanagement.domain.ThamSoHeThong;
+import com.example.studentmanagement.repository.TaiKhoanRepository;
+import com.example.studentmanagement.service.TaiKhoanService;
+import com.example.studentmanagement.service.ThamSoHeThongService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

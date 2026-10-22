@@ -1,4 +1,4 @@
-package com.studentmanagement.dto;
+package com.example.studentmanagement.dto;
 
 public class BangDiemDTO {
     private Long maHocSinh;
