@@ -1,7 +1,7 @@
-package com.example.studentmanagement.service;
+package com.studentmanagement.service;
 
-import com.example.studentmanagement.domain.ThamSoHeThong;
-import com.example.studentmanagement.repository.ThamSoHeThongRepository;
+import com.studentmanagement.domain.ThamSoHeThong;
+import com.studentmanagement.repository.ThamSoHeThongRepository;
 import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

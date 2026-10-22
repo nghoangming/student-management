@@ -1,8 +1,8 @@
-package com.example.studentmanagement.controller;
+package com.studentmanagement.controller;
 
-import com.example.studentmanagement.domain.BangDiem;
-import com.example.studentmanagement.service.KiemTraDiemService;
-import com.example.studentmanagement.service.TinhDTBService;
+import com.studentmanagement.domain.BangDiem;
+import com.studentmanagement.service.KiemTraDiemService;
+import com.studentmanagement.service.TinhDTBService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

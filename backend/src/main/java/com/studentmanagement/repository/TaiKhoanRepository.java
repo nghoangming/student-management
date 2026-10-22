@@ -1,6 +1,6 @@
-package com.example.studentmanagement.repository;
+package com.studentmanagement.repository;
 
-import com.example.studentmanagement.domain.TaiKhoan;
+import com.studentmanagement.domain.TaiKhoan;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

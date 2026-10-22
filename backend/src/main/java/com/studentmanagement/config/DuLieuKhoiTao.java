@@ -1,9 +1,9 @@
-package com.example.studentmanagement.config;
+package com.studentmanagement.config;
 
-import com.example.studentmanagement.domain.TaiKhoan;
-import com.example.studentmanagement.domain.ThamSoHeThong;
-import com.example.studentmanagement.repository.TaiKhoanRepository;
-import com.example.studentmanagement.repository.ThamSoHeThongRepository;
+import com.studentmanagement.domain.TaiKhoan;
+import com.studentmanagement.domain.ThamSoHeThong;
+import com.studentmanagement.repository.TaiKhoanRepository;
+import com.studentmanagement.repository.ThamSoHeThongRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;

@@ -1,6 +1,6 @@
-package com.example.studentmanagement.repository;
+package com.studentmanagement.repository;
 
-import com.example.studentmanagement.domain.BangDiem;
+import com.studentmanagement.domain.BangDiem;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

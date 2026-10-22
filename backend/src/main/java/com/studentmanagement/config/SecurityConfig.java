@@ -1,6 +1,6 @@
-package com.example.studentmanagement.config;
+package com.studentmanagement.config;
 
-import com.example.studentmanagement.repository.TaiKhoanRepository;
+import com.studentmanagement.repository.TaiKhoanRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;

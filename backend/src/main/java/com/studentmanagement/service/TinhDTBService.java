@@ -1,7 +1,7 @@
-package com.example.studentmanagement.service;
+package com.studentmanagement.service;
 
-import com.example.studentmanagement.domain.BangDiem;
-import com.example.studentmanagement.domain.ChiTietDiem;
+import com.studentmanagement.domain.BangDiem;
+import com.studentmanagement.domain.ChiTietDiem;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
