@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nhập Điểm (MH05)</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h1 class="mb-4 text-primary">Màn hình Nhập điểm (MH05)</h1>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <form th:action="@{/diem/luu}" method="post" th:object="${bangDiem}">
+                    <div class="mb-3">
+                        <label class="form-label">Mã Học Sinh</label>
+                        <input type="number" class="form-control" name="maHocSinh" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Môn Học</label>
+                        <select class="form-select" name="maMonHoc">
+                            <option value="1">Toán</option>
+                            <option value="2">Ngữ Văn</option>
+                            <option value="3">Anh Văn</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Điểm 15 phút</label>
+                        <input type="number" step="0.1" max="10" min="0" class="form-control" name="diem15p">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Điểm 1 tiết</label>
+                        <input type="number" step="0.1" max="10" min="0" class="form-control" name="diem1tiet">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Điểm Cuối Kỳ</label>
+                        <input type="number" step="0.1" max="10" min="0" class="form-control" name="diemCuoiKy">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Lưu Điểm</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
