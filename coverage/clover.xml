@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1793106154332" clover="3.2.0">
+  <project timestamp="1793106154333" name="All files">
+    <metrics statements="63" coveredstatements="63" conditionals="43" coveredconditionals="40" methods="9" coveredmethods="9" elements="115" coveredelements="112" complexity="0" loc="63" ncloc="63" packages="2" files="2" classes="2"/>
+    <package name="Bai tap tuan 8">
+      <metrics statements="21" coveredstatements="21" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
+      <file name="app.js" path="D:\cnpm_ketthucmon\Bai tap tuan 8\app.js">
+        <metrics statements="21" coveredstatements="21" conditionals="8" coveredconditionals="6" methods="2" coveredmethods="2"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="23" count="1" type="stmt"/>
+        <line num="24" count="11" type="stmt"/>
+        <line num="25" count="11" type="stmt"/>
+        <line num="26" count="11" type="stmt"/>
+        <line num="28" count="3" type="stmt"/>
+        <line num="34" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="8" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="9" type="stmt"/>
+        <line num="48" count="9" type="stmt"/>
+        <line num="49" count="9" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="57" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="58" count="8" type="stmt"/>
+        <line num="66" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="Bai tap tuan 8.services">
+      <metrics statements="42" coveredstatements="42" conditionals="35" coveredconditionals="34" methods="7" coveredmethods="7"/>
+      <file name="authService.js" path="D:\cnpm_ketthucmon\Bai tap tuan 8\services\authService.js">
+        <metrics statements="42" coveredstatements="42" conditionals="35" coveredconditionals="34" methods="7" coveredmethods="7"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="23" count="14" type="stmt"/>
+        <line num="24" count="14" type="stmt"/>
+        <line num="25" count="14" type="stmt"/>
+        <line num="38" count="15" type="cond" truecount="5" falsecount="0"/>
+        <line num="39" count="2" type="stmt"/>
+        <line num="42" count="13" type="cond" truecount="5" falsecount="0"/>
+        <line num="43" count="2" type="stmt"/>
+        <line num="47" count="11" type="stmt"/>
+        <line num="49" count="11" type="cond" truecount="2" falsecount="0"/>
+        <line num="50" count="1" type="stmt"/>
+        <line num="54" count="10" type="cond" truecount="2" falsecount="0"/>
+        <line num="55" count="1" type="stmt"/>
+        <line num="59" count="9" type="stmt"/>
+        <line num="60" count="9" type="cond" truecount="2" falsecount="0"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="65" count="8" type="stmt"/>
+        <line num="66" count="8" type="stmt"/>
+        <line num="69" count="8" type="stmt"/>
+        <line num="77" count="8" type="stmt"/>
+        <line num="80" count="8" type="stmt"/>
+        <line num="96" count="8" type="cond" truecount="5" falsecount="0"/>
+        <line num="97" count="2" type="stmt"/>
+        <line num="100" count="6" type="cond" truecount="5" falsecount="0"/>
+        <line num="101" count="2" type="stmt"/>
+        <line num="104" count="4" type="stmt"/>
+        <line num="105" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="106" count="1" type="stmt"/>
+        <line num="110" count="3" type="stmt"/>
+        <line num="113" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="114" count="1" type="stmt"/>
+        <line num="118" count="2" type="stmt"/>
+        <line num="119" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="120" count="1" type="stmt"/>
+        <line num="124" count="1" type="stmt"/>
+        <line num="135" count="13" type="stmt"/>
+        <line num="142" count="1" type="stmt"/>
+        <line num="145" count="1" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
