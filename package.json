@@ -1,0 +1,47 @@
+{
+  "name": "lab08-auth-module",
+  "version": "1.0.0",
+  "description": "Lab08 - Coding Standards, Best Practices, Security & Code Review - He thong Quan ly Hoc sinh (Nhom VQMN)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage"
+  },
+  "keywords": [
+    "express",
+    "authentication",
+    "jest",
+    "bcryptjs",
+    "supertest",
+    "code-review",
+    "cnpm"
+  ],
+  "author": "Nhom VQMN - Cong nghe Phan mem",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "collectCoverageFrom": [
+      "app.js",
+      "services/**/*.js",
+      "!server.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    }
+  }
+}
