@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hệ thống Quản lý Học sinh - Kiểm thử Module Xác thực</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #16a34a;
+      --error: #dc2626;
+      --warning: #d97706;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.025);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 2rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 860px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .badge-group {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.25rem 0.6rem;
+      border-radius: 9999px;
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    .badge-team {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      color: #1e293b;
+      margin-bottom: 0.5rem;
+    }
+
+    p.subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 768px) {
+      .main-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .tab-header {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: #f1f5f9;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 1rem;
+      border: none;
+      background: transparent;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: var(--card-bg);
+      color: var(--primary);
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #334155;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 0.65rem 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    input:focus, select:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.75rem;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .quick-presets {
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed var(--border);
+    }
+
+    .preset-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .preset-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .preset-btn {
+      background: #f1f5f9;
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.65rem;
+      font-size: 0.75rem;
+      border-radius: 6px;
+      cursor: pointer;
+      color: #475569;
+      transition: all 0.15s;
+    }
+
+    .preset-btn:hover {
+      background: #e2e8f0;
+      color: #0f172a;
+    }
+
+    /* Response Panel */
+    .response-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .response-header {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f8fafc;
+    }
+
+    .response-header h3 {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .status-pill {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.25rem 0.5rem;
+      border-radius: 6px;
+      display: none;
+    }
+
+    .status-2xx {
+      display: inline-block;
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .status-4xx {
+      display: inline-block;
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .status-5xx {
+      display: inline-block;
+      background: #ffedd5;
+      color: #c2410c;
+    }
+
+    pre.response-body {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 1rem;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      overflow-x: auto;
+      flex: 1;
+      min-height: 200px;
+      max-height: 380px;
+    }
+
+    /* Logged in Welcome Box (Demonstrates XSS prevention via textContent) */
+    .welcome-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      display: none;
+    }
+
+    .welcome-box h4 {
+      color: #166534;
+      font-size: 0.95rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .welcome-box p {
+      font-size: 0.85rem;
+      color: #15803d;
+    }
+
+    .highlight-user {
+      font-weight: bold;
+      color: #047857;
+    }
+
+    footer {
+      margin-top: 2.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-group">
+        <span class="badge">Công nghệ phần mềm - Lab 08</span>
+        <span class="badge badge-team">Nhóm VQMN</span>
+      </div>
+      <h1>Hệ thống Quản lý Học sinh</h1>
+      <p class="subtitle">Giao diện kiểm thử trực quan Module Xác thực (Authentication UI Testbed)</p>
+    </header>
+
+    <div class="main-grid">
+      <!-- Cột Trái: Form Thao tác -->
+      <div class="card">
+        <div class="tab-header">
+          <button id="tab-register-btn" class="tab-btn active" onclick="switchTab('register')">Đăng ký tài khoản</button>
+          <button id="tab-login-btn" class="tab-btn" onclick="switchTab('login')">Đăng nhập</button>
+        </div>
+
+        <div class="card-body">
+          <!-- Form Đăng ký -->
+          <form id="form-register" onsubmit="handleRegister(event)">
+            <div class="form-group">
+              <label for="reg-username">Tên đăng nhập (Username):</label>
+              <input type="text" id="reg-username" placeholder="Ví dụ: hocsinh_nguyenvana" required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-password">Mật khẩu (Tối thiểu 8 ký tự):</label>
+              <input type="password" id="reg-password" placeholder="Nhập mật khẩu..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="reg-role">Vai trò người dùng:</label>
+              <select id="reg-role">
+                <option value="student">Học sinh (student)</option>
+                <option value="teacher">Giáo viên (teacher)</option>
+                <option value="admin">Quản trị viên (admin)</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn-submit">Tạo tài khoản (POST /register)</button>
+
+            <!-- Test Presets Đăng ký -->
+            <div class="quick-presets">
+              <div class="preset-title">Thử nhanh các kịch bản Lab 08:</div>
+              <div class="preset-buttons">
+                <button type="button" class="preset-btn" onclick="presetReg('hocsinh_nam', 'Password123@', 'student')">Hợp lệ (201)</button>
+                <button type="button" class="preset-btn" onclick="presetReg('hocsinh_nam', 'MatKhauMoi123@', 'student')">Trùng lặp (409)</button>
+                <button type="button" class="preset-btn" onclick="presetReg('hocsinh_short', '1234567', 'student')">Mật khẩu ngắn (400)</button>
+                <button type="button" class="preset-btn" onclick="presetReg('    ', 'ValidPassword123', 'student')">Username rỗng (400)</button>
+                <button type="button" class="preset-btn" onclick="presetReg('<script>alert(1)</script>', 'Password123@', 'student')">Thử XSS String</button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Form Đăng nhập -->
+          <form id="form-login" onsubmit="handleLogin(event)" style="display: none;">
+            <div class="form-group">
+              <label for="login-username">Tên đăng nhập:</label>
+              <input type="text" id="login-username" placeholder="Nhập tên đăng nhập..." required>
+            </div>
+
+            <div class="form-group">
+              <label for="login-password">Mật khẩu:</label>
+              <input type="password" id="login-password" placeholder="Nhập mật khẩu..." required>
+            </div>
+
+            <button type="submit" class="btn-submit" style="background:#059669;">Đăng nhập (POST /login)</button>
+
+            <!-- Test Presets Đăng nhập -->
+            <div class="quick-presets">
+              <div class="preset-title">Thử nhanh các kịch bản đăng nhập:</div>
+              <div class="preset-buttons">
+                <button type="button" class="preset-btn" onclick="presetLogin('hocsinh_nam', 'Password123@')">Đăng nhập đúng (200)</button>
+                <button type="button" class="preset-btn" onclick="presetLogin('hocsinh_nam', 'WrongPassword999')">Sai mật khẩu (401)</button>
+                <button type="button" class="preset-btn" onclick="presetLogin('user_khong_ton_tai', 'Password123@')">User lạ (401)</button>
+                <button type="button" class="preset-btn" onclick="presetLogin('  hocsinh_nam  ', 'Password123@')">Trim khoảng trắng (200)</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Cột Phải: Kết quả phản hồi từ API -->
+      <div class="card response-card">
+        <div class="response-header">
+          <h3>Kết quả phản hồi (JSON Response)</h3>
+          <span id="response-status" class="status-pill">HTTP 200</span>
+        </div>
+        <pre id="response-viewer" class="response-body">// Hãy nhấn Đăng ký hoặc Đăng nhập để xem phản hồi JSON từ Server tại đây...</pre>
+
+        <!-- Khung hiển thị người dùng (Minh chứng chống XSS an toàn bằng textContent) -->
+        <div id="welcome-panel" class="welcome-box">
+          <h4>Trạng thái đăng nhập thành công!</h4>
+          <p>Xin chào: <span id="display-user-name" class="highlight-user"></span></p>
+          <p>Vai trò hệ thống: <span id="display-user-role" style="font-weight:600;"></span></p>
+          <small style="color:#059669; display:block; margin-top:4px;">
+            (Dữ liệu được render bằng <code>element.textContent</code> giúp chống tấn công XSS)
+          </small>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      Hệ thống Quản lý Học sinh &copy; 2026 - Nhóm VQMN (Nguyễn Hoàng Minh, Tăng Duy Việt, Nguyễn Trí Nguyên, Lưu Nhật Quang)
+    </footer>
+  </div>
+
+  <script>
+    let currentTab = 'register';
+
+    function switchTab(tab) {
+      currentTab = tab;
+      const regBtn = document.getElementById('tab-register-btn');
+      const loginBtn = document.getElementById('tab-login-btn');
+      const regForm = document.getElementById('form-register');
+      const loginForm = document.getElementById('form-login');
+
+      if (tab === 'register') {
+        regBtn.classList.add('active');
+        loginBtn.classList.remove('active');
+        regForm.style.display = 'block';
+        loginForm.style.display = 'none';
+      } else {
+        loginBtn.classList.add('active');
+        regBtn.classList.remove('active');
+        loginForm.style.display = 'block';
+        regForm.style.display = 'none';
+      }
+    }
+
+    // Đăng ký
+    async function handleRegister(e) {
+      e.preventDefault();
+      const username = document.getElementById('reg-username').value;
+      const password = document.getElementById('reg-password').value;
+      const role = document.getElementById('reg-role').value;
+
+      await callApi('/api/auth/register', { username, password, role });
+    }
+
+    // Đăng nhập
+    async function handleLogin(e) {
+      e.preventDefault();
+      const username = document.getElementById('login-username').value;
+      const password = document.getElementById('login-password').value;
+
+      const result = await callApi('/api/auth/login', { username, password });
+
+      // Nếu đăng nhập thành công, hiển thị banner chào mừng (Dùng textContent chống XSS)
+      const welcomePanel = document.getElementById('welcome-panel');
+      const displayUser = document.getElementById('display-user-name');
+      const displayRole = document.getElementById('display-user-role');
+
+      if (result && result.status === 200 && result.data && result.data.data) {
+        displayUser.textContent = result.data.data.username; // Chống XSS an toàn!
+        displayRole.textContent = result.data.data.role;
+        welcomePanel.style.display = 'block';
+      } else {
+        welcomePanel.style.display = 'none';
+      }
+    }
+
+    // Gọi API chung
+    async function callApi(url, body) {
+      const viewer = document.getElementById('response-viewer');
+      const statusPill = document.getElementById('response-status');
+
+      viewer.textContent = 'Đang gửi yêu cầu tới server...';
+
+      try {
+        const res = await fetch(url, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(body)
+        });
+
+        const data = await res.json();
+
+        // Cập nhật status badge
+        statusPill.textContent = `HTTP ${res.status}`;
+        statusPill.className = 'status-pill';
+        if (res.status >= 200 && res.status < 300) {
+          statusPill.classList.add('status-2xx');
+        } else if (res.status >= 400 && res.status < 500) {
+          statusPill.classList.add('status-4xx');
+        } else {
+          statusPill.classList.add('status-5xx');
+        }
+
+        // Format JSON đẹp mắt
+        viewer.textContent = JSON.stringify(data, null, 2);
+        return { status: res.status, data };
+      } catch (err) {
+        statusPill.textContent = 'LỖI MẠNG';
+        statusPill.className = 'status-pill status-5xx';
+        viewer.textContent = `Không thể kết nối đến máy chủ Express!\nHãy chắc chắn rằng server đang chạy tại port 3000.\nChi tiết lỗi: ${err.message}`;
+        return null;
+      }
+    }
+
+    // Presets tiện ích
+    function presetReg(u, p, r) {
+      document.getElementById('reg-username').value = u;
+      document.getElementById('reg-password').value = p;
+      document.getElementById('reg-role').value = r;
+    }
+
+    function presetLogin(u, p) {
+      document.getElementById('login-username').value = u;
+      document.getElementById('login-password').value = p;
+    }
+  </script>
+</body>
+</html>
